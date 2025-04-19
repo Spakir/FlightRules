@@ -18,7 +18,7 @@ class FlightFilterTest {
         List<Flight> flights = List.of(
                 new Flight(List.of(new Segment(LocalDateTime.now(), LocalDateTime.now().plusHours(2)))
                 ));
-        assertEquals(1, FlightFilter.filter(flights, alwaysFalse).size());
+        assertEquals(0, FlightFilter.filter(flights, alwaysFalse).size());
     }
 
     @Test
@@ -27,6 +27,6 @@ class FlightFilterTest {
         List<Flight> flights = List.of(
                 new Flight(List.of(new Segment(LocalDateTime.now(), LocalDateTime.now().plusHours(2))))
         );
-        assertTrue(FlightFilter.filter(flights, alwaysTrue).isEmpty());
+        assertFalse(FlightFilter.filter(flights, alwaysTrue).isEmpty());
     }
 }
