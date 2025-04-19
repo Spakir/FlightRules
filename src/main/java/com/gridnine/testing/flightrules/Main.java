@@ -18,6 +18,7 @@ public class Main {
 
         System.out.println("1. Исключены перелёты с вылетом до текущего момента времени:");
         FlightFilter.filter(flights, new DepartureBeforeCurrentTimeRuleFilter()).forEach(System.out::println);
+
         System.out.println("2. Исключены перелёты с сегментами, где дата прилёта раньше даты вылета:");
         FlightFilter.filter(flights, new ArrivalBeforeDepartureRuleFilter()).forEach(System.out::println);
 
